@@ -18,7 +18,30 @@ function App() {
         Tratando de hacer una app en React!
         </a>
       </header>
+
+      <div className="followList">
+        <ul>Seguidores
+          <li>
+          <img src="/LOGO NUEVO MAS CALIDAD PNG.PNG"></img>
+            Pepito 1
+          </li>
+          <li>
+          <img></img>
+            Pepito 2
+            </li>
+            <img></img>
+            <li>
+            <img></img>
+            Pepito 3
+            </li>
+            <li>
+            <img></img>
+            Pepita 4
+            </li>
+        </ul>
+      </div>
     </div>
+
   );
 }
 
