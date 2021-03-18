@@ -2,6 +2,6 @@ Nueva forma de ver el DOM. el DOM ahora es virtual, es decir que cuando hay un c
 
 
 PARA CREAR UN PROYECTO REACT:
-En el git bash hay que colocar $ npx create-react-app coderhouse-clase-2 //en "coderhouse...."  va el nombre de la carpeta donde estara el proyecto. 
+En el git bash o en la misma consola del VSC hay que colocar $ npx create-react-app coderhouse-clase-2 //en "coderhouse...."  va el nombre de la carpeta donde estara el proyecto. 
 
 Para ejecutar el proyecto no es como un proyecto normal con liveserver, se puede hacer desde la consola de VSC con npm run start. En el archivo package.json estan los comandos que se pueden usar. es> "npm run ... (aca el comando, puede ser build, start, etc.)
