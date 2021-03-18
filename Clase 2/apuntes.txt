@@ -1,0 +1,4 @@
+Nueva forma de ver el DOM. el DOM ahora es virtual, es decir que cuando hay un cambio en el mismo en un elemento no refresca ni modifica todo los demás elementos en cuestión. Sino que el cambio se produce en dicho elemento y list. VIRTUAL DOM. se llama Fiber. Una parte del DOM queda guardado en la memoria, entonces siempre está presente. 
+
+
+CLI: 
