@@ -22,7 +22,7 @@ function App() {
       <div className="followList">
         <ul>Seguidores
           <li>
-          <img src="/LOGO NUEVO MAS CALIDAD PNG.PNG"></img>
+          <img src={logo} className="App-logo" alt="logo" />
             Pepito 1
           </li>
           <li>
