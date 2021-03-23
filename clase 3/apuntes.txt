@@ -1,0 +1,6 @@
+SUGAR SYNTAX:
+Cualquier aspecto del lenguaje que hace que los programas sean más facil de escribir, comprender y etc. por ej.: i + 1 es lo mismo que poner i++.
+
+POLLIFILS Y RETROCOMPATIBILIDAD:
+Permite correr nuestro codigo en navegadores mas viejos. 
+BabelJS permite transcribir codigo js moderno a js comun para que pueda ser entendido por muchos browsers. Ya viene incluido cuando creamos la app de react (clase 2) y no hace falta hacer nada. 
