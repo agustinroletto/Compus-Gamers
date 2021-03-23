@@ -4,3 +4,8 @@ Cualquier aspecto del lenguaje que hace que los programas sean más facil de esc
 POLLIFILS Y RETROCOMPATIBILIDAD:
 Permite correr nuestro codigo en navegadores mas viejos. 
 BabelJS permite transcribir codigo js moderno a js comun para que pueda ser entendido por muchos browsers. Ya viene incluido cuando creamos la app de react (clase 2) y no hace falta hacer nada. 
+
+
+WEBPACK: es un empaquetador. Se encarga de agarrar todos nuestros archivos y los une, tambien los minifica. Por ejemplo, si tenemos varios archivos css, o scss o lo que fueran los agarra y los resumen en la menor cantidad de archivos para que sean mas rapidos. 
+
+JSX: es propio de JS y no de react. es una forma de escribir codigo html de una formas mas sencillas y otras ventajas mas. 
