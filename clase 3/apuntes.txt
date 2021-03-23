@@ -9,3 +9,9 @@ BabelJS permite transcribir codigo js moderno a js comun para que pueda ser ente
 WEBPACK: es un empaquetador. Se encarga de agarrar todos nuestros archivos y los une, tambien los minifica. Por ejemplo, si tenemos varios archivos css, o scss o lo que fueran los agarra y los resumen en la menor cantidad de archivos para que sean mas rapidos. 
 
 JSX: es propio de JS y no de react. es una forma de escribir codigo html de una formas mas sencillas y otras ventajas mas. 
+
+
+CORRECIONES DEL DESAFIO DE LA CLASE: 
+1-     Cuando importas bootstrap import 'bootstrap/dist/css/bootstrap.min.css';, se lo hace 1 sola vez, ya sea en la en el archivo index.js o en App.js, mi recomendacion es que lo hagas en index.js, no es necesario que lo hagas dentro del componente que creaste.
+2- Los import de los componentes como NavBar, se los hacen en App.js directamente, ya que el index.js solo llama esa funcion, te dejo adjuntada una imagen de donde tendria que ir el NavBar.
+3- Con respecto a los imports, se realizan en los archivos donde vas a usar los componentes, ya sea tanto un componente escrito por vos o de alguna dependencia como bootstrap, igual en el after de mañana, va a explicar bien lo que respecta a import y export.
