@@ -1,0 +1,6 @@
+Utilizar let y no más var en las variables. siempre.
+Expresion funcional: cuando se guarda una funcion en una variable:
+let prueba = function (){
+    console.log(prueba)
+}
+Más ejemplos en el archivo del profe
