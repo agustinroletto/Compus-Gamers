@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from "../src/components/NavBar"
+import NavBar from "./components/NavBar/NavBar"
+import ItemListContainer from './components/NavBar/ItemListContainer';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
                        <button className="btn btn-primary">Primary</button>{' '}
 
       </header>
+      <ItemListContainer title="Agustin Roletto" />
+      <ItemListContainer title="Tienes X productos agregados al carrito" />
+
     </div>
   );
 }
