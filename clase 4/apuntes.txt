@@ -9,3 +9,6 @@ class app extends react.components {
 }
 
 Cada componente podria tener su propia carpeta dentro de components. Seria una buena practica. 
+
+
+Las props son propiedades de cada componente y se pasan del padre al hijo. VER EJEMPLO DE LA CLASE.
