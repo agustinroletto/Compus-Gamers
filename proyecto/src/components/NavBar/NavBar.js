@@ -26,7 +26,7 @@ function NavBar() {
       </NavDropdown>
     </Nav>
     <Form inline>
-    <CartWidget />
+    <Nav.Link href="#"><CartWidget /></Nav.Link>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-success">Buscar</Button>
     </Form>
