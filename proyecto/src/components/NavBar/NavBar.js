@@ -5,10 +5,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl"
 import Button from "react-bootstrap/Button"
-import CartWidget from './CartWidget'
+import CartWidget from '../Cart/CartWidget'
 
 
-function NavBar() {
+const NavBar = ()=> {
   return (
  <Navbar bg="light" expand="lg">
   <Navbar.Brand href="#home">Proyecto React</Navbar.Brand>

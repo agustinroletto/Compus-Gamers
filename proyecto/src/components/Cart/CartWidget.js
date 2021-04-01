@@ -1,7 +1,7 @@
 import './CartWidget.css';
 
 
-function CartWidget() {
+const CartWidget = () => {
   return (
 <i class="fas fa-shopping-cart carrito"></i>
 
