@@ -11,7 +11,6 @@ import grafica3060 from './img/3060.jpg'
 function ItemListContainer(props) {
   return (
     <div className="container">
-       <h2 className='titulo'>Hola {props.title}, como estas?</h2>
       <div>
         <CardDeck>
   <Card>
