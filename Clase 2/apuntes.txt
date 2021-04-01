@@ -1,7 +1,0 @@
-Nueva forma de ver el DOM. el DOM ahora es virtual, es decir que cuando hay un cambio en el mismo en un elemento no refresca ni modifica todo los demás elementos en cuestión. Sino que el cambio se produce en dicho elemento y list. VIRTUAL DOM. se llama Fiber. Una parte del DOM queda guardado en la memoria, entonces siempre está presente. 
-
-
-PARA CREAR UN PROYECTO REACT:
-En el git bash o en la misma consola del VSC hay que colocar $ npx create-react-app coderhouse-clase-2 //en "coderhouse...."  va el nombre de la carpeta donde estara el proyecto. 
-
-Para ejecutar el proyecto no es como un proyecto normal con liveserver, se puede hacer desde la consola de VSC con npm run start. En el archivo package.json estan los comandos que se pueden usar. es> "npm run ... (aca el comando, puede ser build, start, etc.)
