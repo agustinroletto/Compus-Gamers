@@ -37,7 +37,7 @@ export const Contador = (props) => {
                     <Button onClick={handleDecrement}><i class="fas fa-minus"></i></Button> 
                     <p>{contador}</p>
                 </ButtonGroup>
-                <Button variant="outline-primary">Agregar al carritoS</Button>            
+                <Button variant="outline-primary">Agregar al carritos</Button>            
   </ButtonToolbar>
         </div>
     )
