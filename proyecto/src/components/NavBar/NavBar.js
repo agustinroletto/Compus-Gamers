@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button"
 import CartWidget from '../Cart/CartWidget'
 
 
-const NavBar = ()=> {
+const NavBar = () => {
   return (
  <Navbar bg="light" expand="lg">
   <Navbar.Brand href="#home">Proyecto React</Navbar.Brand>
