@@ -57,6 +57,7 @@ export default function AutoGrid() {
   return (
     <div className="">
       <Item img={grafica3090} />
+      {/* acá sé que deberia colocar la const products que me devuelve el item con el map. pero no se como hacerlo.  */}
       <Item />
     </div>
   );
