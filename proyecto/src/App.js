@@ -28,8 +28,6 @@ function App() {
 
       </header>
       <ItemListContainer title="Agustin Roletto" />
-      <ItemListContainer title="Tienes X productos agregados al carrito" />
-
     </div>
   );
 }

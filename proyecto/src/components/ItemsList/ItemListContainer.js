@@ -1,71 +1,216 @@
-import './ItemListContainer.css';
-import {Contador} from './Contador'
-import Card from "react-bootstrap/Card"
-import CardDeck from "react-bootstrap/CardDeck"
-import grafica3090 from './img/3090.jpg'
-import grafica3080 from './img/3080.png'
-import grafica3070 from './img/3070.png'
-import grafica3060 from './img/3060.jpg'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import FloatingActionButtons from './Contador'
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1
+  },
+  card: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    aling: 'center',
+    color: theme.palette.text.secondary
+  }
+}));
 
-function ItemListContainer(props) {
+export default function AutoGrid() {
+  const classes = useStyles();
+
   return (
-    <div className="container">
-      <div>
-        <CardDeck>
-  <Card>
-    <Card.Img variant="top" src={grafica3090} />
-    <Card.Body>
-      <Card.Title>Placa de video MSI Gaming Trio 3090</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-            <Contador stock="5" />
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                title="Contemplative Reptile"
+              />
+              
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
+                </Typography>
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+              <FloatingActionButtons stock="5" />
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
+                </Typography>
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+                            <FloatingActionButtons stock="7" />
 
+            </CardActions>
+          </Card>{" "}
+        </Grid>
+        <Grid item xs>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
+                </Typography>
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+                <FloatingActionButtons stock="8" />
 
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src={grafica3080} />
-    <Card.Body>
-      <Card.Title>Placa de video MSI Gaming Trio 3080</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-            <Contador stock='4' />
+            </CardActions>
+          </Card>{" "}
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
+                </Typography>
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+                            <FloatingActionButtons stock="3" />
 
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src={grafica3070} />
-    <Card.Body>
-      <Card.Title>Placa de video MSI Gaming Trio 3070</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-            <Contador stock='10' />
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-</CardDeck>
-      </div>
+            </CardActions>
+          </Card>{" "}
+        </Grid>
+        <Grid item xs={4}>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
+                </Typography>
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+                            <FloatingActionButtons stock="9" />
+
+            </CardActions>
+          </Card>{" "}
+        </Grid>
+        <Grid item xs>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
+                </Typography>
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+                            <FloatingActionButtons stock="0" />
+
+            </CardActions>
+          </Card>{" "}
+        </Grid>
+      </Grid>
     </div>
-    
   );
 }
-
-
-export default ItemListContainer;
-
