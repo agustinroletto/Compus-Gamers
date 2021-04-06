@@ -8,18 +8,19 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import FloatingActionButtons from './Contador'
+import FloatingActionButtons from "./Contador";
+import grafica3090 from "./img/3090.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   card: {
     padding: theme.spacing(2),
     textAlign: "center",
-    aling: 'center',
-    color: theme.palette.text.secondary
-  }
+    aling: "center",
+    color: theme.palette.text.secondary,
+  },
 }));
 
 export default function AutoGrid() {
@@ -29,17 +30,17 @@ export default function AutoGrid() {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs>
-          <Card className={classes.card}>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                image="https://github.com/agustinroletto/curso-react/blob/main/proyecto/src/components/ItemsList/img/3090.jpg"
                 title="Contemplative Reptile"
               />
-              
+
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                  Placa de video MSI 3090
                 </Typography>
                 <Typography component="p">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -49,17 +50,17 @@ export default function AutoGrid() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Agregar al carrito
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Ver más
               </Button>
               <FloatingActionButtons stock="5" />
             </CardActions>
           </Card>
         </Grid>
         <Grid item xs>
-          <Card className={classes.card}>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -68,7 +69,7 @@ export default function AutoGrid() {
               />
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                  Placa de video MSI 3080
                 </Typography>
                 <Typography component="p">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -78,18 +79,17 @@ export default function AutoGrid() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Agregar al carrito
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Ver más
               </Button>
-                            <FloatingActionButtons stock="7" />
-
+              <FloatingActionButtons stock="7" />
             </CardActions>
           </Card>{" "}
         </Grid>
         <Grid item xs>
-          <Card className={classes.card}>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -98,7 +98,7 @@ export default function AutoGrid() {
               />
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                  Placa de video MSI 3070
                 </Typography>
                 <Typography component="p">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -108,20 +108,19 @@ export default function AutoGrid() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Agregar al carrito
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Ver más
               </Button>
-                <FloatingActionButtons stock="8" />
-
+              <FloatingActionButtons stock="8" />
             </CardActions>
           </Card>{" "}
         </Grid>
       </Grid>
       <Grid container spacing={3}>
         <Grid item xs>
-          <Card className={classes.card}>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -130,7 +129,7 @@ export default function AutoGrid() {
               />
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                  Placa de video MSI 3060
                 </Typography>
                 <Typography component="p">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -140,18 +139,17 @@ export default function AutoGrid() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Agregar al carrito
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Ver más
               </Button>
-                            <FloatingActionButtons stock="3" />
-
+              <FloatingActionButtons stock="3" />
             </CardActions>
           </Card>{" "}
         </Grid>
         <Grid item xs={4}>
-          <Card className={classes.card}>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -160,7 +158,7 @@ export default function AutoGrid() {
               />
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                  Placa de video MSI 2080 TI
                 </Typography>
                 <Typography component="p">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -170,18 +168,17 @@ export default function AutoGrid() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Agregar al carrito
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Ver más
               </Button>
-                            <FloatingActionButtons stock="9" />
-
+              <FloatingActionButtons stock="9" />
             </CardActions>
           </Card>{" "}
         </Grid>
         <Grid item xs>
-          <Card className={classes.card}>
+          <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -190,7 +187,7 @@ export default function AutoGrid() {
               />
               <CardContent>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                  Placa de video MSI 3060
                 </Typography>
                 <Typography component="p">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -200,13 +197,12 @@ export default function AutoGrid() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Agregar al carrito
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Ver más
               </Button>
-                            <FloatingActionButtons stock="0" />
-
+              <FloatingActionButtons stock="0" />
             </CardActions>
           </Card>{" "}
         </Grid>
