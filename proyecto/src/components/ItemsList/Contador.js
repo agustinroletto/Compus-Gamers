@@ -12,7 +12,7 @@ export const Contador = (props) => {
     
 
   if(contador < props.stock){
-   setContador( contador + 1)
+  setContador( contador + 1)
 }
   };
 
@@ -24,10 +24,7 @@ export const Contador = (props) => {
   
   };
 
-  //console.log(props.stock)
-
-  // const stock = (props.stock = stock) =>{
-  //    contador <={stock} ? {handleIncrement} :'none';
+ 
 
     return (
         <div className='DivContador'>
