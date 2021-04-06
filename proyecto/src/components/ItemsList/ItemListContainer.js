@@ -10,6 +10,11 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import FloatingActionButtons from "./Contador";
 import grafica3090 from "./img/3090.jpg";
+import grafica3080 from "./img/3080.png";
+import grafica3070 from "./img/3070.png";
+import grafica3060 from "./img/3060.jpg";
+import grafica2080 from "./img/2080.jpg";
+
 import "./ItemListContainer.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     aling: "center",
     color: theme.palette.text.secondary,
+  },
+  media: {
+    height: 350,
   },
 }));
 
@@ -65,7 +73,7 @@ export default function AutoGrid() {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                image={grafica3080}
                 title="Contemplative Reptile"
               />
               <CardContent>
@@ -94,7 +102,7 @@ export default function AutoGrid() {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                image={grafica3070}
                 title="Contemplative Reptile"
               />
               <CardContent>
@@ -125,7 +133,7 @@ export default function AutoGrid() {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                image={grafica3070}
                 title="Contemplative Reptile"
               />
               <CardContent>
@@ -154,7 +162,7 @@ export default function AutoGrid() {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                image={grafica2080}
                 title="Contemplative Reptile"
               />
               <CardContent>
@@ -183,7 +191,7 @@ export default function AutoGrid() {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+                image={grafica3060}
                 title="Contemplative Reptile"
               />
               <CardContent>
