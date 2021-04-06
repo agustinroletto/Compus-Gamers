@@ -2,7 +2,7 @@ import {MenuItems } from "./MenuItems"
 import { Component } from 'react';
 import { Button } from './Button';
 import './NavBar.css';
-
+import CartWidget from '../Cart/CartWidget';
 
 
 
@@ -32,7 +32,7 @@ handleClick = () => {
           )
         })}
         </ul>
-
+        <a href="#"><CartWidget /></a>
         <Button> Ingresar</Button>
       </nav>
   );
