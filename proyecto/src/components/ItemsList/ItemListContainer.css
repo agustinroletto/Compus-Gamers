@@ -1,5 +1,9 @@
-.titulo{
-    font-size: 30px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: teal;
+.titulo {
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: teal;
+}
+
+Button {
+  text-transform: none !important;
 }
