@@ -34,7 +34,7 @@ export default function AutoGrid() {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://github.com/agustinroletto/curso-react/blob/main/proyecto/src/components/ItemsList/img/3090.jpg"
+                image={grafica3090}
                 title="Contemplative Reptile"
               />
 
