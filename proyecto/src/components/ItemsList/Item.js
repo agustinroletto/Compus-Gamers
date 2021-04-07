@@ -9,12 +9,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import FloatingActionButtons from "./Contador";
-import grafica3090 from "./img/3090.jpg";
-import grafica3080 from "./img/3080.png";
-import grafica3070 from "./img/3070.png";
-import grafica3060 from "./img/3060.jpg";
-import grafica2080 from "./img/2080.jpg";
-import AlertStock from "./AlertStock";
 
 import "./ItemListContainer.css";
 
@@ -61,59 +55,7 @@ export default function Item(props) {
               <Button size="small" color="primary">
                 Ver más
               </Button>
-              <FloatingActionButtons stock="5" />
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item xs>
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={props.img}
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="headline" component="h2">
-                  {props.title}
-                </Typography>
-                <Typography component="p">{props.descripcion}</Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Agregar al carrito
-              </Button>
-              <Button size="small" color="primary">
-                Ver más
-              </Button>
-              <FloatingActionButtons stock="5" />
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item xs>
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={props.img}
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="headline" component="h2">
-                  {props.title}
-                </Typography>
-                <Typography component="p">{props.descripcion}</Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Agregar al carrito
-              </Button>
-              <Button size="small" color="primary">
-                Ver más
-              </Button>
-              <FloatingActionButtons stock="5" />
+              <FloatingActionButtons stock={props.stock} />
             </CardActions>
           </Card>
         </Grid>
