@@ -42,7 +42,7 @@ function Item({ products }) {
                   <CardActionArea>
                     <CardMedia
                       className={classes.media}
-                      image={product.img}
+                      image={product.avatar_url}
                       title="Contemplative Reptile"
                     />
                     <CardContent>
@@ -51,7 +51,7 @@ function Item({ products }) {
                         variant="headline"
                         component="h2"
                       >
-                        {product.name}
+                        {product.login}
                       </Typography>
                       <Typography component="p">{product.height}</Typography>
                     </CardContent>
@@ -63,7 +63,7 @@ function Item({ products }) {
                     <Button size="small" color="primary">
                       Ver más
                     </Button>
-                    <FloatingActionButtons stock={product.mass} />
+                    <FloatingActionButtons stock={product.id} />
                   </CardActions>
                 </Card>
               </Grid>

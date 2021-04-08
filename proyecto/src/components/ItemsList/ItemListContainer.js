@@ -4,7 +4,7 @@ import CardContainer from "./ItemList";
 
 export default function ItemListContainer() {
   return (
-    <div className="">
+    <div className="divItemList">
       <CardContainer />
     </div>
   );
