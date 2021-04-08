@@ -7,3 +7,7 @@
 Button {
   text-transform: none !important;
 }
+.divItemList {
+  display: flex;
+  justify-content: center;
+}

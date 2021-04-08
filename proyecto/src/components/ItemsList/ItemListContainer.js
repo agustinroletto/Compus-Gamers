@@ -1,11 +1,11 @@
 import React from "react";
 import "./ItemListContainer.css";
-import AutoGrid from "./ItemList";
+import Promises from "./ItemList";
 
 export default function ItemListContainer() {
   return (
     <div className="">
-      <AutoGrid />
+      <Promises />
     </div>
   );
 }

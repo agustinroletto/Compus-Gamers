@@ -39,15 +39,16 @@ const Items = [
 ];
 
 const Promises = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]); //entre parentesis va el valor inicial del estado. devuelve un array con dos valores: el primero es el valor del estado, en este caso en un objeto y el 2do es una funcion que actualiza el estado, osea que actualiza el state iniciado vacio.
   useEffect(() => {
+    //acá declaro useeffect que es una funcion que dentro utiliza el settimeout, este ultimo declara una const donde products es igual a mi array de Items que está más arriba. debajo agarra setdata y le pasa data (osea mi estado) y products, osea mi array. al final van los segundos que tarda en ejecutarse. Y al final el return con un div y un map que recorre data y a su vez returna el elemento.
     setTimeout(() => {
       const Products = Items;
       setData(...data, Products);
     }, 3000);
   }, []);
   return (
-    <div>
+    <div className="divItemList">
       {Array.from(data).map((d) => {
         return (
           <Item
