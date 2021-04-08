@@ -28,41 +28,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Item(props) {
+function Item({ products }) {
   const classes = useStyles();
 
   return (
     <div className="divItem">
-      <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grid item xs>
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={props.img}
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="headline" component="h2">
-                    {props.title}
-                  </Typography>
-                  <Typography component="p">{props.descripcion}</Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Agregar al carrito
-                </Button>
-                <Button size="small" color="primary">
-                  Ver más
-                </Button>
-                <FloatingActionButtons stock={props.stock} />
-              </CardActions>
-            </Card>
-          </Grid>
-        </Grid>
-      </div>
+      {Array.from(products).map((product) => {
+        return (
+          <div className={classes.root}>
+            <Grid container spacing={3}>
+              <Grid item xs>
+                <Card className={classes.root}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image={product.img}
+                      title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="headline"
+                        component="h2"
+                      >
+                        {product.name}
+                      </Typography>
+                      <Typography component="p">{product.height}</Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Agregar al carrito
+                    </Button>
+                    <Button size="small" color="primary">
+                      Ver más
+                    </Button>
+                    <FloatingActionButtons stock={product.mass} />
+                  </CardActions>
+                </Card>
+              </Grid>
+            </Grid>
+          </div>
+        );
+      })}
     </div>
   );
 }
+
+export default Item;

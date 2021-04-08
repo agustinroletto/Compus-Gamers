@@ -1,11 +1,11 @@
 import React from "react";
 import "./ItemListContainer.css";
-import Promises from "./ItemList";
+import CardContainer from "./ItemList";
 
 export default function ItemListContainer() {
   return (
     <div className="">
-      <Promises />
+      <CardContainer />
     </div>
   );
 }
