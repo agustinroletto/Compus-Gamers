@@ -64,7 +64,7 @@ function Item({ products }) {
                     <Button
                       size="small"
                       color="primary"
-                      onClick="<ItemDetailContainer />"
+                      onClick="{visibilidad ? <ItemDetailContainer />: null}"
                     >
                       Ver más
                     </Button>

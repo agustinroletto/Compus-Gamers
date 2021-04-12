@@ -2,6 +2,7 @@ import SimpleModal from "./ItemDetail";
 import React, { useState, useEffect } from "react";
 
 function ItemDetailContainer() {
+  const [visibilidad, setVisibilidad] = useState(false);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
