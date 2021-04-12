@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import FloatingActionButtons from "./Contador";
 import "./Item.css";
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
 import "./ItemListContainer.css";
 
@@ -60,7 +61,11 @@ function Item({ products }) {
                     <Button size="small" color="primary">
                       Agregar al carrito
                     </Button>
-                    <Button size="small" color="primary">
+                    <Button
+                      size="small"
+                      color="primary"
+                      onClick="<ItemDetailContainer />"
+                    >
                       Ver más
                     </Button>
                     <FloatingActionButtons stock={product.id} />
