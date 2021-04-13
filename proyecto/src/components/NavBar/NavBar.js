@@ -1,8 +1,8 @@
-import { MenuItems } from "./MenuItems";
 import { Component } from "react";
 import { Button } from "./Button";
 import CartWidget from "../Cart/CartWidget";
 import "./NavBar.css";
+import { NavLink } from "react-router-dom";
 
 class NavBar extends Component {
   state = { clicked: false };
@@ -22,15 +22,15 @@ class NavBar extends Component {
           {/* la parte de arriba lo que hace es como un if, si esta //clickeado con el state de arriba agarra un logo de font awasome y si no agarra otro */}
         </div>
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a className={item.cName} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
+          <NavLink activeClassName="active" exact to="/">
+            <li>Home</li>
+          </NavLink>
+          <NavLink activeClassName="active" exact to="/about">
+            <li>About</li>
+          </NavLink>
+          <NavLink activeClassName="active" exact to="/contact">
+            <li>Contact</li>
+          </NavLink>
         </ul>
         <a href="#">
           <CartWidget />
