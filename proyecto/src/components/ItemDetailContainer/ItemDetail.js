@@ -1,17 +1,13 @@
 import React from "react";
 
-function SimpleModal(products) {
+function SimpleModal({ products }) {
   return (
     <div className="divItem">
-      {Array.from(products).map((product) => {
-        return (
-          <div className="DivItemDetails">
-            <h1>{product.login}</h1>
-            <h2>{product.url}</h2>
-            <a>{product.type}</a>
-          </div>
-        );
-      })}
+      <div className="DivItemDetails">
+        <h1>{products.login}</h1>
+        <h2>{products.url}</h2>
+        <a>{products.type}</a>
+      </div>
     </div>
   );
 }

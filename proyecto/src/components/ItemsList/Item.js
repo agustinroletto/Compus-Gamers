@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import FloatingActionButtons from "./Contador";
 import "./Item.css";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import { useState } from "react";
 
 import "./ItemListContainer.css";
 
@@ -32,50 +33,51 @@ const useStyles = makeStyles((theme) => ({
 function Item({ products }) {
   const classes = useStyles();
 
+  const [visibilidad, setVisibilidad] = useState(false);
+
+  function ChangeVisibilidad() {
+    return setVisibilidad(!visibilidad);
+  }
+
   return (
     <div className="divItem">
-      {Array.from(products).map((product) => {
-        return (
-          <div className={classes.root}>
-            <Grid container spacing={3}>
-              <Grid item xs>
-                <Card className={classes.root}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image={product.avatar_url}
-                      title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant="headline"
-                        component="h2"
-                      >
-                        {product.login}
-                      </Typography>
-                      <Typography component="p">{product.height}</Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Agregar al carrito
-                    </Button>
-                    <Button
-                      size="small"
-                      color="primary"
-                      onClick="{visibilidad ? <ItemDetailContainer />: null}"
-                    >
-                      Ver más
-                    </Button>
-                    <FloatingActionButtons stock={product.id} />
-                  </CardActions>
-                </Card>
-              </Grid>
+      {Array.from(products).map((product) => (
+        <div className={classes.root}>
+          <Grid container spacing={3}>
+            <Grid item xs>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={product.avatar_url}
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="headline" component="h2">
+                      {product.login}
+                    </Typography>
+                    <Typography component="p">{product.height}</Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Agregar al carrito
+                  </Button>
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={ChangeVisibilidad}
+                  >
+                    Ver más
+                  </Button>
+                  <FloatingActionButtons stock={product.id} />
+                </CardActions>
+              </Card>
             </Grid>
-          </div>
-        );
-      })}
+          </Grid>
+          {visibilidad ? <ItemDetailContainer product={product} /> : null}
+        </div>
+      ))}
     </div>
   );
 }
