@@ -12,15 +12,12 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="NavbarItems">
-        <h1 className="Navbar-logo">
-          Carrito <i className="fab fa-react"></i>
-        </h1>
-        <div className="menu-icon" onClick={this.handleClick}>
-          <i
-            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
-          ></i>
-          {/* la parte de arriba lo que hace es como un if, si esta //clickeado con el state de arriba agarra un logo de font awasome y si no agarra otro */}
-        </div>
+        <NavLink activeClassName="active" exact to="/">
+          <h1 className="Navbar-logo">
+            Carrito <i className="fab fa-react"></i>
+          </h1>
+        </NavLink>
+
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           <NavLink activeClassName="active" exact to="/">
             <li>Home</li>
