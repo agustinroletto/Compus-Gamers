@@ -1,6 +1,5 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemsList/ItemListContainer";
 import Home from "./views/home/Home";
 import About from "./views/about/About";
 import Contact from "./views/contact/Contact";

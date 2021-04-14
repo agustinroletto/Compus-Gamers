@@ -14,7 +14,7 @@ class NavBar extends Component {
       <nav className="NavbarItems">
         <NavLink activeClassName="active" exact to="/">
           <h1 className="Navbar-logo">
-            Carrito <i className="fab fa-react"></i>
+            Carrito <i class="fab fa-js-square"></i>
           </h1>
         </NavLink>
 
