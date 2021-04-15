@@ -1,8 +1,9 @@
 import { Component } from "react";
-import { Button } from "./Button";
 import CartWidget from "../Cart/CartWidget";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
+import React from "react";
+import Categories from "./Categories";
 
 class NavBar extends Component {
   state = { clicked: false };
@@ -26,13 +27,13 @@ class NavBar extends Component {
             <li>About</li>
           </NavLink>
           <NavLink activeClassName="active" exact to="/contact">
-            <li>Contact</li>
+            <li>Contacto</li>
           </NavLink>
+          <Categories />
         </ul>
-        <a href="#">
+        <NavLink activeClassName="active" exact to="/cart">
           <CartWidget />
-        </a>
-        <Button> Ingresar</Button>
+        </NavLink>
       </nav>
     );
   }

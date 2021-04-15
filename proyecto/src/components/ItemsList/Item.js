@@ -12,8 +12,7 @@ import FloatingActionButtons from "./Contador";
 import "./Item.css";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import { useState } from "react";
-
-import "./ItemListContainer.css";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,11 +46,13 @@ function Item({ products }) {
             <Grid item xs>
               <Card className={classes.root}>
                 <CardActionArea>
-                  <CardMedia
-                    className={classes.media}
-                    image={product.avatar_url}
-                    title="Contemplative Reptile"
-                  />
+                  <NavLink activeClassName="active" to={`/item/${product.id}`}>
+                    <CardMedia
+                      className={classes.media}
+                      image={product.avatar_url}
+                      title="Contemplative Reptile"
+                    />
+                  </NavLink>
                   <CardContent>
                     <Typography gutterBottom variant="headline" component="h2">
                       {product.login}

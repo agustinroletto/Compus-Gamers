@@ -1,9 +1,10 @@
 import SimpleModal from "./ItemDetail";
 
-function ItemDetailContainer({ product }) {
+function ItemDetailContainer({ match }) {
+  console.log(match);
   return (
     <div>
-      <SimpleModal products={product} />
+      <SimpleModal match={match} />
     </div>
   );
 }

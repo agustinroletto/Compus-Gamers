@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
-  console.log(products);
   useEffect(() => {
     fetch("https://api.github.com/users")
       .then((response) => response.json())
