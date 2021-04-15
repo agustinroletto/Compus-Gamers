@@ -19,7 +19,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/categories/:categoriesId" component={Home} />
             {/* aca  ya tengo creado un componente que se llama categories pero como el desafio dice que tiene que ir a ItemListContainer directamente lo redirijo a home  */}
-            <Route path="/item/:itemId" component={ItemDetailContainer} />
+            <Route path="/item/:Id" component={ItemDetailContainer} />
           </Switch>
         </div>
       </Router>

@@ -49,15 +49,18 @@ function Item({ products }) {
                   <NavLink activeClassName="active" to={`/item/${product.id}`}>
                     <CardMedia
                       className={classes.media}
-                      image={product.avatar_url}
+                      image={product.image}
                       title="Contemplative Reptile"
                     />
                   </NavLink>
                   <CardContent>
                     <Typography gutterBottom variant="headline" component="h2">
-                      {product.login}
+                      {product.name}
                     </Typography>
-                    <Typography component="p">{product.height}</Typography>
+                    <Typography component="p">
+                      {product.category.name}
+                    </Typography>
+                    <p> $ARS {product.price}</p>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
@@ -71,7 +74,7 @@ function Item({ products }) {
                   >
                     Ver más
                   </Button>
-                  <FloatingActionButtons stock={product.id} />
+                  <FloatingActionButtons stock={Math.random() * 10} />
                 </CardActions>
               </Card>
             </Grid>

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://api.github.com/users")
+    fetch("https://e-show-server.herokuapp.com/api/v1/products")
       .then((response) => response.json())
       .then((data) => setProducts(data)); // ASIGNAR AL STATE ORIGINA VACIO, LA DATA QUE RECIBIMOS DE LA PETICION ASYNC
   }, []); // LE PASAMOS UN ARRAY VACIO PARA QUE NO LOOPEE DE FORMA INFINITA;
