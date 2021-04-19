@@ -3,7 +3,7 @@ import CartWidget from "../Cart/CartWidget";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import React from "react";
-import Categories from "./Categories";
+import Categories from "./Categories/Categories";
 
 class NavBar extends Component {
   state = { clicked: false };

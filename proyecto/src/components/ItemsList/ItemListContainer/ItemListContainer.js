@@ -1,17 +1,7 @@
 import "./ItemListContainer.css";
-import CardContainer from "./ItemList";
+import CardContainer from "../ItemList/ItemList";
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Loading from "../Loading/Loading";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}));
+import Loading from "../../Loading/Loading";
 
 export default function ItemListContainer() {
   const [products, setProducts] = useState([]);

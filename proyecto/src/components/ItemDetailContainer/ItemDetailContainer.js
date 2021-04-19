@@ -1,4 +1,4 @@
-import SimpleModal from "./ItemDetail";
+import SimpleModal from "./ItemDetail/ItemDetail";
 
 function ItemDetailContainer({ match }) {
   return (

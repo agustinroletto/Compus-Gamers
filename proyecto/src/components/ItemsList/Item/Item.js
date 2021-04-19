@@ -8,10 +8,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import FloatingActionButtons from "./Contador";
+import FloatingActionButtons from "../Contador/Contador";
 import "./Item.css";
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Item({ products }) {
   const classes = useStyles();
-
-  const [visibilidad, setVisibilidad] = useState(false);
-
   return (
     <div className="divItem">
       {Array.from(products).map((product) => (
