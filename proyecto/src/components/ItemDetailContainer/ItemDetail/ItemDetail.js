@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./ItemDetail.css";
 
 function SimpleModal({ match }) {
   const [item, setItem] = useState([]);

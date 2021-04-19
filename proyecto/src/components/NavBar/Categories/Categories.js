@@ -21,6 +21,7 @@ export default function Categories() {
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
+        className="divCategorias"
       >
         Categorias
       </Button>
@@ -31,13 +32,25 @@ export default function Categories() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <NavLink activeClassName="active" to="/categories/categoria1">
+        <NavLink
+          className="categorias"
+          activeClassName="active"
+          to="/categories/categoria1"
+        >
           <MenuItem onClick={handleClose}>Categoria 1</MenuItem>
         </NavLink>
-        <NavLink activeClassName="active" to="/categories/categoria2">
+        <NavLink
+          className="categorias"
+          activeClassName="active"
+          to="/categories/categoria2"
+        >
           <MenuItem onClick={handleClose}>Categoria 2</MenuItem>
         </NavLink>{" "}
-        <NavLink activeClassName="active" to="/categories/categoria3">
+        <NavLink
+          className="categorias"
+          activeClassName="active"
+          to="/categories/categoria3"
+        >
           <MenuItem onClick={handleClose}>Categoria 3</MenuItem>
         </NavLink>
       </Menu>

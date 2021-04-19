@@ -1,3 +1,4 @@
-.CardContainer {
-  justify-items: normal;
+.itemContainer {
+  display: flex;
+  margin-top: 2rem;
 }

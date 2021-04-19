@@ -13,17 +13,20 @@ import "./Item.css";
 import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   card: {
     padding: theme.spacing(2),
     textAlign: "center",
     aling: "center",
     color: theme.palette.text.secondary,
+    height: 500,
   },
   media: {
-    height: 350,
+    height: 200,
+    width: 400,
+  },
+  div: {
+    height: 600,
+    width: 400,
   },
 }));
 
@@ -32,7 +35,7 @@ function Item({ products }) {
   return (
     <div className="divItem">
       {Array.from(products).map((product) => (
-        <div className={classes.root}>
+        <div className={classes.div}>
           <Grid container spacing={3}>
             <Grid item xs>
               <Card className={classes.root}>

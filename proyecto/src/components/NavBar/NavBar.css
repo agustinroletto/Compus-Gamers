@@ -45,18 +45,13 @@
 .menu-icon {
   display: none;
 }
-NavLink li {
+.liNavBar {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
 }
-
-NavLink li:hover {
-  background-color: #6d76f7;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
+NavLink {
+  text-decoration: none;
 }
-
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;

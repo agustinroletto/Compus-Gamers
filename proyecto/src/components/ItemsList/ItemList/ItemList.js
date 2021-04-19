@@ -4,7 +4,7 @@ import Item from "../Item/Item";
 
 function CardContainer({ products }) {
   return (
-    <div className="CardContainer">
+    <div className="itemContainer">
       <Item products={products} />
     </div>
   );
