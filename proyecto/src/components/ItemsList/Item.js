@@ -34,10 +34,6 @@ function Item({ products }) {
 
   const [visibilidad, setVisibilidad] = useState(false);
 
-  function ChangeVisibilidad() {
-    return setVisibilidad(!visibilidad);
-  }
-
   return (
     <div className="divItem">
       {Array.from(products).map((product) => (
@@ -67,19 +63,17 @@ function Item({ products }) {
                   <Button size="small" color="primary">
                     Agregar al carrito
                   </Button>
-                  <Button
-                    size="small"
-                    color="primary"
-                    onClick={ChangeVisibilidad}
-                  >
-                    Ver más
-                  </Button>
+                  <NavLink activeClassName="active" to={`/item/${product.id}`}>
+                    <Button size="small" color="primary">
+                      Ver más
+                    </Button>
+                  </NavLink>
+
                   <FloatingActionButtons stock={Math.random() * 10} />
                 </CardActions>
               </Card>
             </Grid>
           </Grid>
-          {visibilidad ? <ItemDetailContainer product={product} /> : null}
         </div>
       ))}
     </div>
