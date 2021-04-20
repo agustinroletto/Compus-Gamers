@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
   },
   div: {
-    height: 600,
+    height: 650,
     width: 400,
   },
 }));
@@ -36,7 +36,7 @@ function Item({ products }) {
     <div className="divItem">
       {Array.from(products).map((product) => (
         <div className={classes.div}>
-          <Grid container spacing={3}>
+          <Grid className="divComponente" container spacing={3}>
             <Grid item xs>
               <Card className={classes.root}>
                 <CardActionArea>

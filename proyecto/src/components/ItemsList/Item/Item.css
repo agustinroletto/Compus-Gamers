@@ -1,4 +1,9 @@
 .divItem {
+  display: flex;
   justify-content: center;
-  margin-top: auto;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.divComponente {
+  width: 100% !important;
 }
