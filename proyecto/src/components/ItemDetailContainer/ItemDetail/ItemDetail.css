@@ -1,3 +1,16 @@
 .DivItemDetails {
   align-items: center;
 }
+/* .divButtons {
+   display: none; 
+} */
+.open {
+  display: block;
+}
+.cuotas {
+  font-size: 1rem;
+  font-family: fantasy;
+}
+.terminarCompra {
+  display: none !important;
+}

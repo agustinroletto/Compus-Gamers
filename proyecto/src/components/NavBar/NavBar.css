@@ -49,7 +49,11 @@
   color: white;
   text-decoration: none;
 }
-NavLink {
+.liNavBar:link {
+  text-decoration: none;
+}
+
+NavLink:link {
   text-decoration: none;
 }
 @media screen and (max-width: 960px) {

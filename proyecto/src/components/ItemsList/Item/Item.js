@@ -8,7 +8,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import FloatingActionButtons from "../Contador/Contador";
 import "./Item.css";
 import { NavLink } from "react-router-dom";
 
@@ -25,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
   },
   div: {
-    height: 650,
-    width: 400,
+    maxWidth: 400,
+    maxHeight: 650,
+    position: "relative",
   },
 }));
 
@@ -66,8 +66,6 @@ function Item({ products }) {
                       Ver más
                     </Button>
                   </NavLink>
-
-                  <FloatingActionButtons stock={Math.random() * 10} />
                 </CardActions>
               </Card>
             </Grid>

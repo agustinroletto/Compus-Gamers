@@ -4,7 +4,7 @@ import "./ItemDetailContainer.css";
 function ItemDetailContainer({ match }) {
   return (
     <div className="divItemDetail">
-      <SimpleModal match={match} />
+      <SimpleModal match={match} stock={Math.random() * 10} />
     </div>
   );
 }
