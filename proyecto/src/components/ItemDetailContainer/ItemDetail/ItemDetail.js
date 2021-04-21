@@ -36,19 +36,22 @@ function SimpleModal({ match, stock }) {
     }
   };
 
-  const [compra, setCompra] = useState(0);
+  const [arrayCompra, setarrayCompra] = useState([]);
 
   const onChangeValue = (e) => {
-    if (compra <= stock) {
-      setCompra(compra + contador);
-      console.log(compra);
-    }
+    setarrayCompra(arrayCompra.push(item));
+    console.log(arrayCompra);
+    // if (arrayCompra.includes(item.id)) {
+    //   arrayCompra.item
+    // }
   };
 
   const decrementValue = (e) => {
-    if (compra >= 0) {
-      setCompra(compra - contador);
-      console.log(compra);
+    if (arrayCompra.length >= 0) {
+      if (arrayCompra.includes(item) === "true") {
+        setarrayCompra(arrayCompra.splice(0, 1));
+        console.log(arrayCompra);
+      }
     }
   };
 
@@ -72,20 +75,13 @@ function SimpleModal({ match, stock }) {
           <IconButton aria-label="delete" onClick={decrementValue}>
             <DeleteIcon />
           </IconButton>
-          <IconButton
-            color="primary"
-            aria-label="add to shopping cart"
-            onClick={contador > 0 ? onChangeValue : null}
-          >
-            <AddShoppingCartIcon />
-          </IconButton>
-
           {contador > 0 ? (
             <NavLink activeClassName="active" exact to="/cart">
               <Button
                 variant="outlined"
                 color="primary"
                 className="terminarCompra"
+                onClick={onChangeValue}
               >
                 Finalizar compra
               </Button>
