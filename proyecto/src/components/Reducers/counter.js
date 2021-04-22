@@ -5,7 +5,9 @@
 const counterReducer = (state = { item: {}, quantity: {} }, action) => {
   switch (action.type) {
     case "ADD":
-      return state;
+      return (state.item = action.payload.i)(
+        (state.quantity = action.payload.q)
+      );
     case "DELETE":
       return state;
     default:
