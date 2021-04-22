@@ -94,7 +94,7 @@ function SimpleModal({ match, stock }) {
             </IconButton>
             {contador > 0 && (
               <div>
-                <NavLink activeClassName="active" exact to="/cart">
+                <NavLink activeClassName="active" exact to="/itemAdd">
                   <Button
                     variant="outlined"
                     color="primary"

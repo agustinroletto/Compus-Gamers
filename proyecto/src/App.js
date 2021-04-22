@@ -6,6 +6,8 @@ import Contact from "./views/contact/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Categories from "./views/Categories/Categories";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ItemAdd from "./views/itemAdd/ItemAdd";
+import Cart from "./views/cart/Cart";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/categories/:categoriesId" component={Home} />
             {/* aca  ya tengo creado un componente que se llama categories pero como el desafio dice que tiene que ir a ItemListContainer directamente lo redirijo a home  */}
             <Route path="/item/:Id" component={ItemDetailContainer} />
+            <Route path="/itemAdd" component={ItemAdd} />
+            <Route path="/cart" component={Cart} />
           </Switch>
         </div>
       </Router>
