@@ -13,7 +13,7 @@ export default function ItemListContainer() {
       fetch("https://e-show-server.herokuapp.com/api/v1/products")
         .then((response) => response.json())
         .then((data) => setProducts(data));
-    }, 1500);
+    }, 2000);
     // ASIGNAR AL STATE ORIGINA VACIO, LA DATA QUE RECIBIMOS DE LA PETICION ASYNC
   }, [setSpinner]); // LE PASAMOS UN ARRAY VACIO PARA QUE NO LOOPEE DE FORMA INFINITA;
   // if (products.length === 0) {

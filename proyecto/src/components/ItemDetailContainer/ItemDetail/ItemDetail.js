@@ -7,6 +7,9 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
 
+import { useSelector, useDispatch } from "react-redux";
+import { Add, Delete } from "../../Actions/Index";
+
 function SimpleModal({ match, stock }) {
   const [item, setItem] = useState([]);
   const [spinner, setSpinner] = useState(true);
@@ -19,7 +22,7 @@ function SimpleModal({ match, stock }) {
       )
         .then((response) => response.json())
         .then((data) => setItem(data));
-    }, 1500);
+    }, 1000);
 
     // ASIGNAR AL STATE ORIGINA VACIO, LA DATA QUE RECIBIMOS DE LA PETICION ASYNC
   }, [setSpinner]); // LE PASAMOS UN ARRAY VACIO PARA QUE NO LOOPEE DE FORMA INFINITA;
@@ -57,6 +60,19 @@ function SimpleModal({ match, stock }) {
     }
   };
 
+  //REDUX
+  const counter = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
+
+  const addItem = (item, quantity) => {
+    dispatch(Add(item, quantity));
+    console.log(counter);
+  };
+
+  const removeItem = (id) => {
+    dispatch(Delete(id));
+  };
+
   return (
     <div className="divItem">
       {spinner ? (
@@ -77,16 +93,28 @@ function SimpleModal({ match, stock }) {
               <DeleteIcon />
             </IconButton>
             {contador > 0 && (
-              <NavLink activeClassName="active" exact to="/cart">
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  className="terminarCompra"
-                  onClick={onChangeValue}
-                >
-                  Finalizar compra
-                </Button>
-              </NavLink>
+              <div>
+                <NavLink activeClassName="active" exact to="/cart">
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className="agregarAlCarrito"
+                    onClick={addItem(item.name, 1)}
+                  >
+                    Agregar al carrito
+                  </Button>
+                </NavLink>
+                <NavLink activeClassName="active" exact to="/cart">
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className="terminarCompra"
+                    // onClick={onChangeValue}
+                  >
+                    Comprar ahora
+                  </Button>
+                </NavLink>
+              </div>
             )}
           </div>
         </div>
