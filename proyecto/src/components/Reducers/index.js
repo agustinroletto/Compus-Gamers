@@ -1,9 +1,9 @@
-import counterReducer from "./counter";
+import Carrito from "./Carrito";
 
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  Carrito,
 });
 
 export default rootReducer;

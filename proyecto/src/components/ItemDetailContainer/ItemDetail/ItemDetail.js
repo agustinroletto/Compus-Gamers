@@ -41,32 +41,31 @@ function SimpleModal({ match, stock }) {
     }
   };
 
-  const [arrayCompra, setarrayCompra] = useState([]);
+  // const [arrayCompra, setarrayCompra] = useState([]);
 
-  const onChangeValue = (e) => {
-    setarrayCompra(arrayCompra.push(item));
-    console.log(arrayCompra);
-    // if (arrayCompra.includes(item.id)) {
-    //   arrayCompra.item
-    // }
-  };
+  // const onChangeValue = (e) => {
+  //   setarrayCompra(arrayCompra.push(item));
+  //   console.log(arrayCompra);
+  //   if (arrayCompra.includes(item.id)) {
+  //   arrayCompra.item
+  // }
+  // };
 
-  const decrementValue = (e) => {
-    if (arrayCompra.length >= 0) {
-      if (arrayCompra.includes(item) === "true") {
-        setarrayCompra(arrayCompra.splice(0, 1));
-        console.log(arrayCompra);
-      }
-    }
-  };
+  // const decrementValue = (e) => {
+  //   if (arrayCompra.length >= 0) {
+  //     if (arrayCompra.includes(item) === "true") {
+  //       setarrayCompra(arrayCompra.splice(0, 1));
+  //       console.log(arrayCompra);
+  //     }
+  //   }
+  // };
 
   //REDUX
-  const counter = useSelector((state) => state.counter);
+  const carrito = useSelector((state) => state.Carrito);
   const dispatch = useDispatch();
 
   const addItem = (item, quantity) => {
     dispatch(Add(item, quantity));
-    console.log(counter);
   };
 
   const removeItem = (id) => {
@@ -89,7 +88,7 @@ function SimpleModal({ match, stock }) {
             contador={contador}
           />
           <div className="divButtons">
-            <IconButton aria-label="delete" onClick={decrementValue}>
+            <IconButton aria-label="delete">
               <DeleteIcon />
             </IconButton>
             {contador > 0 && (
