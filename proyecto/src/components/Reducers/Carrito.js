@@ -1,11 +1,9 @@
-
-
 const Carrito = (state = [], action) => {
   switch (action.type) {
     case "ADD":
-      return [...state, {action.payload, action.quantityload}]
+      return [...state, action.payload];
     case "DELETE":
-      return state;
+      return [...state, []];
     default:
       return state;
   }

@@ -64,8 +64,8 @@ function SimpleModal({ match, stock }) {
   const carrito = useSelector((state) => state.Carrito);
   const dispatch = useDispatch();
 
-  const addItem = (item, quantity) => {
-    dispatch(Add(item, quantity));
+  const addItem = (item) => {
+    dispatch(Add(item));
   };
 
   const removeItem = (id) => {
@@ -98,7 +98,7 @@ function SimpleModal({ match, stock }) {
                     variant="outlined"
                     color="primary"
                     className="agregarAlCarrito"
-                    onClick={addItem(item.name, 1)}
+                    onClick={() => addItem(item)}
                   >
                     Agregar al carrito
                   </Button>

@@ -1,13 +1,13 @@
-export const Add = (i, q) => {
+export const Add = (i) => {
   return {
     type: "ADD",
     payload: i,
-    quantityload: q,
   };
 };
 
-export const Delete = () => {
+export const Delete = (d) => {
   return {
     type: "DELETE",
+    payload: d,
   };
 };
