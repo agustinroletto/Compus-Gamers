@@ -65,11 +65,12 @@ function SimpleModal({ match, stock }) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
-    dispatch(Add(item));
+    if (carrito.includes(item) === true) {
+      console.log(carrito[item]);
+    } else dispatch(Add(item));
   };
-
-  const removeItem = (id) => {
-    dispatch(Delete(id));
+  const removeItem = (item) => {
+    if (carrito.includes(item) === true) dispatch(Delete(item));
   };
 
   return (
@@ -93,24 +94,31 @@ function SimpleModal({ match, stock }) {
             </IconButton>
             {contador > 0 && (
               <div>
-                <NavLink activeClassName="active" exact to="/itemAdd">
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    className="agregarAlCarrito"
-                    onClick={() => addItem(item)}
-                  >
-                    Agregar al carrito
-                  </Button>
-                </NavLink>
+                {/* <NavLink activeClassName="active" exact to="/itemAdd"> */}
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className="agregarAlCarrito"
+                  onClick={() => addItem(item)}
+                >
+                  Agregar al carrito
+                </Button>
+                {/* </NavLink> */}
                 <NavLink activeClassName="active" exact to="/cart">
                   <Button
                     variant="outlined"
                     color="primary"
                     className="terminarCompra"
-                    // onClick={onChangeValue}
                   >
                     Comprar ahora
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className="terminarCompra"
+                    onClick={() => removeItem(item)}
+                  >
+                    eliminar
                   </Button>
                 </NavLink>
               </div>

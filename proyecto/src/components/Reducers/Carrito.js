@@ -3,7 +3,9 @@ const Carrito = (state = [], action) => {
     case "ADD":
       return [...state, action.payload];
     case "DELETE":
-      return [...state, []];
+      return state.filter((item) => item !== action.payload);
+    case "CLEAR_CART":
+      return (state = []);
     default:
       return state;
   }

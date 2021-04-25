@@ -11,3 +11,9 @@ export const Delete = (d) => {
     payload: d,
   };
 };
+
+export const clearCart = () => {
+  return {
+    type: "CLEAR_CART",
+  };
+};
