@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
-import { Add, Delete } from "../../Actions/Index";
+import { Add, Delete, clearCart } from "../../Actions/Index";
 
 function SimpleModal({ match, stock }) {
   const [item, setItem] = useState([]);
@@ -66,11 +66,15 @@ function SimpleModal({ match, stock }) {
 
   const addItem = (item) => {
     if (carrito.includes(item) === true) {
-      console.log(carrito[item]);
+      console.log(carrito[item]); //aca va que agregue un stock al array pero no pude encontrar como hacerlo.
     } else dispatch(Add(item));
   };
   const removeItem = (item) => {
-    if (carrito.includes(item) === true) dispatch(Delete(item));
+    if (carrito.includes(item) === true) dispatch(Delete(item)); //aca me faltaria pasarle el id y que busque ese id y lo quite.
+  };
+
+  const cartVacio = () => {
+    dispatch(clearCart());
   };
 
   return (
@@ -94,31 +98,32 @@ function SimpleModal({ match, stock }) {
             </IconButton>
             {contador > 0 && (
               <div>
-                {/* <NavLink activeClassName="active" exact to="/itemAdd"> */}
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  className="agregarAlCarrito"
-                  onClick={() => addItem(item)}
-                >
-                  Agregar al carrito
-                </Button>
-                {/* </NavLink> */}
+                <NavLink activeClassName="active" exact to="/cart">
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className="agregarAlCarrito"
+                    onClick={() => addItem(item)}
+                  >
+                    Agregar al carrito
+                  </Button>
+                </NavLink>
                 <NavLink activeClassName="active" exact to="/cart">
                   <Button
                     variant="outlined"
                     color="primary"
                     className="terminarCompra"
+                    onClick={() => cartVacio()}
                   >
-                    Comprar ahora
+                    Vaciar carrito
                   </Button>
                   <Button
                     variant="outlined"
-                    color="primary"
+                    color="secundary"
                     className="terminarCompra"
                     onClick={() => removeItem(item)}
                   >
-                    eliminar
+                    Eliminar Item
                   </Button>
                 </NavLink>
               </div>
