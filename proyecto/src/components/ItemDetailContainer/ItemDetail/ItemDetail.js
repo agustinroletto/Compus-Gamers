@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
-import { Add, Delete, clearCart } from "../../Actions/Index";
+import { Add, Delete, clearCart } from "../../../redux/Actions/Index";
 
 function SimpleModal({ match, stock }) {
   const [item, setItem] = useState([]);
@@ -40,25 +40,6 @@ function SimpleModal({ match, stock }) {
       setContador(contador - 1);
     }
   };
-
-  // const [arrayCompra, setarrayCompra] = useState([]);
-
-  // const onChangeValue = (e) => {
-  //   setarrayCompra(arrayCompra.push(item));
-  //   console.log(arrayCompra);
-  //   if (arrayCompra.includes(item.id)) {
-  //   arrayCompra.item
-  // }
-  // };
-
-  // const decrementValue = (e) => {
-  //   if (arrayCompra.length >= 0) {
-  //     if (arrayCompra.includes(item) === "true") {
-  //       setarrayCompra(arrayCompra.splice(0, 1));
-  //       console.log(arrayCompra);
-  //     }
-  //   }
-  // };
 
   //REDUX
   const carrito = useSelector((state) => state.Carrito);
