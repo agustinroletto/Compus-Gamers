@@ -20,7 +20,10 @@ export default function CartWidget() {
   const carrito = useSelector((state) => state.Carrito);
 
   return (
-    <IconButton aria-label="cart">
+    <IconButton
+      aria-label="cart"
+      className={carrito === [] ? "iconNone" : "iconTrue"}
+    >
       <StyledBadge className="cartWidgetColor" badgeContent={carrito.length}>
         <ShoppingCartIcon className="cartWidgetCirculo" />
       </StyledBadge>

@@ -1,3 +1,9 @@
 .cartWidgetColor {
   color: white;
 }
+.iconNone {
+  display: none !important;
+}
+.iconTrue {
+  display: true;
+}

@@ -10,6 +10,7 @@ class NavBar extends Component {
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
+
   render() {
     return (
       <nav className="NavbarItems">
@@ -31,6 +32,7 @@ class NavBar extends Component {
           </NavLink>
           <Categories />
         </ul>
+
         <NavLink activeClassName="active" exact to="/cart">
           <CartWidget />
         </NavLink>
