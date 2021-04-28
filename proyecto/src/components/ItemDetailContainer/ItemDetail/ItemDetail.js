@@ -50,14 +50,6 @@ function SimpleModal({ match, stock }) {
       console.log(carrito[item]); //aca va que agregue un stock al array pero no pude encontrar como hacerlo.
     } else dispatch(Add(item));
   };
-  const removeItem = (item) => {
-    if (carrito.includes(item) === true) dispatch(Delete(item)); //aca me faltaria pasarle el id y que busque ese id y lo quite.
-  };
-
-  const cartVacio = () => {
-    dispatch(clearCart());
-  };
-
   return (
     <div className="divItem">
       {spinner ? (
@@ -87,24 +79,6 @@ function SimpleModal({ match, stock }) {
                     onClick={() => addItem(item)}
                   >
                     Agregar al carrito
-                  </Button>
-                </NavLink>
-                <NavLink activeClassName="active" exact to="/cart">
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    className="terminarCompra"
-                    onClick={() => cartVacio()}
-                  >
-                    Vaciar carrito
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    color="secundary"
-                    className="terminarCompra"
-                    onClick={() => removeItem(item)}
-                  >
-                    Eliminar Item
                   </Button>
                 </NavLink>
               </div>

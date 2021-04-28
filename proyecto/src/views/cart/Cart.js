@@ -9,11 +9,6 @@ const Cart = () => {
   const carrito = useSelector((state) => state.Carrito);
   const dispatch = useDispatch();
 
-  const removeItem = (item) => {
-    console.log(item);
-    if (carrito.includes(item) === true) dispatch(Delete(item)); //aca tengo el mismo error que en la otra, como accedo al id del item.
-  };
-
   function itemsId(id) {
     carrito.map((id) => {
       if (carrito.includes(id) === true) dispatch(Delete(id));
