@@ -39,14 +39,7 @@ const Cart = () => {
         carrito.map((product) => (
           <div>
             <p>{product.name}</p>
-            <Button
-              variant="outlined"
-              color="primary"
-              className="terminarCompra"
-              onClick={() => cartVacio()}
-            >
-              Vaciar carrito
-            </Button>
+
             <Button
               variant="outlined"
               color="secundary"
@@ -55,16 +48,28 @@ const Cart = () => {
             >
               Eliminar Item
             </Button>
-            <NavLink activeClassName="active" exact to="/">
-              <Button variant="contained" color="secondary">
-                <p>Volver al home</p>
-              </Button>
-            </NavLink>
-            <p>total: {total} </p>
-            <p>Cantidad de productos: {carrito.length} </p>
           </div>
         ))
       )}
+      {carrito.length !== 0 ? (
+        <div>
+          <p>total: {total} </p>
+          <p>Cantidad de productos: {carrito.length} </p>
+          <Button
+            variant="outlined"
+            color="primary"
+            className="terminarCompra"
+            onClick={() => cartVacio()}
+          >
+            Vaciar carrito
+          </Button>
+          <NavLink activeClassName="active" exact to="/">
+            <Button variant="contained" color="secondary">
+              <p>Volver al home</p>
+            </Button>
+          </NavLink>
+        </div>
+      ) : null}
     </div>
   );
 };
