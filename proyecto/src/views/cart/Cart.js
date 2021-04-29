@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Delete, clearCart } from "../../redux/Actions/Index";
 import Button from "@material-ui/core/Button";
@@ -14,9 +14,22 @@ const Cart = () => {
       if (carrito.includes(id) === true) dispatch(Delete(id));
     });
   }
+
+  const removeItem = (id) => {
+    console.log(id);
+    carrito.includes(id) && dispatch(Delete(id)); //aca tengo el mismo error que en la otra, como accedo al id del item.
+  };
   const cartVacio = () => {
     dispatch(clearCart());
+    setTotal(0);
   };
+
+  const [total, setTotal] = useState(0);
+  useEffect(() => {
+    carrito.forEach((product) => {
+      setTotal(Number(product.price));
+    });
+  }, []);
 
   return (
     <div>
@@ -38,13 +51,20 @@ const Cart = () => {
               variant="outlined"
               color="secundary"
               className="terminarCompra"
-              onClick={() => itemsId(product.id)}
+              onClick={() => removeItem(product.id)}
             >
               Eliminar Item
             </Button>
           </div>
         ))
       )}
+      <NavLink activeClassName="active" exact to="/">
+        <Button variant="contained" color="secondary">
+          <p>Volver al home</p>
+        </Button>
+      </NavLink>
+      <p>total: {total} </p>
+      <p>Cantidad de productos: {carrito.length} </p>
     </div>
   );
 };

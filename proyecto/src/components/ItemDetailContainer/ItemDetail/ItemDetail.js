@@ -46,8 +46,9 @@ function SimpleModal({ match, stock }) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
-    if (carrito.includes(item) === true) {
+    if (carrito.includes(item.Id)) {
       console.log(carrito[item]); //aca va que agregue un stock al array pero no pude encontrar como hacerlo.
+      carrito.price = carrito.price + item.price;
     } else dispatch(Add(item));
   };
   return (
