@@ -27,13 +27,13 @@ const Cart = () => {
   const [total, setTotal] = useState(0);
   useEffect(() => {
     carrito.forEach((product) => {
-      setTotal(Number(product.price));
+      setTotal(total + Number(product.price));
     });
   }, []);
 
   return (
     <div>
-      {carrito === [] ? (
+      {carrito.length === 0 ? (
         <CartEmpty />
       ) : (
         carrito.map((product) => (
@@ -55,16 +55,16 @@ const Cart = () => {
             >
               Eliminar Item
             </Button>
+            <NavLink activeClassName="active" exact to="/">
+              <Button variant="contained" color="secondary">
+                <p>Volver al home</p>
+              </Button>
+            </NavLink>
+            <p>total: {total} </p>
+            <p>Cantidad de productos: {carrito.length} </p>
           </div>
         ))
       )}
-      <NavLink activeClassName="active" exact to="/">
-        <Button variant="contained" color="secondary">
-          <p>Volver al home</p>
-        </Button>
-      </NavLink>
-      <p>total: {total} </p>
-      <p>Cantidad de productos: {carrito.length} </p>
     </div>
   );
 };
