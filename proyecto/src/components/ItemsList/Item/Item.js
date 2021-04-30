@@ -34,34 +34,33 @@ function Item({ products }) {
   const classes = useStyles();
   return (
     <div className="divItem">
-      {Array.from(products).map((product) => (
+      {Array.from(products).map((products) => (
         <div className={classes.div}>
           <Grid className="divComponente" container spacing={3}>
             <Grid item xs>
               <Card className={classes.root}>
                 <CardActionArea>
-                  <NavLink activeClassName="active" to={`/item/${product.id}`}>
+                  <NavLink activeClassName="active" to={`/item/${products.id}`}>
                     <CardMedia
                       className={classes.media}
-                      image={product.image}
+                      image={products.imageId}
                       title="Contemplative Reptile"
                     />
                   </NavLink>
                   <CardContent>
                     <Typography gutterBottom variant="headline" component="h2">
-                      {product.name}
+                      {products.title}
                     </Typography>
-                    <Typography component="p">
-                      {product.category.name}
-                    </Typography>
-                    <p> $ARS {product.price}</p>
+                    <Typography component="p">{products.categoryId}</Typography>
+                    <p> $ARS {products.price}</p>
+                    <p> Stock: {products.stock} unidades</p>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
                   <Button size="small" color="primary">
                     Agregar al carrito
                   </Button>
-                  <NavLink activeClassName="active" to={`/item/${product.id}`}>
+                  <NavLink activeClassName="active" to={`/item/${products.id}`}>
                     <Button size="small" color="primary">
                       Ver más
                     </Button>

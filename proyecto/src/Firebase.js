@@ -1,4 +1,6 @@
 import firebase from "firebase/app";
+import "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAKblSCA7Caj9W8_74uki8uAwEogr1xbJQ",
   authDomain: "curso-react-c9276.firebaseapp.com",
@@ -8,10 +10,7 @@ const firebaseConfig = {
   appId: "1:240404607442:web:68b7739888aa8283d9980b",
   measurementId: "G-JGMJ2XBH76",
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 const fb = firebase.initializeApp(firebaseConfig);
-const db = fb.firestore;
+const db = fb.firestore();
 export default db;

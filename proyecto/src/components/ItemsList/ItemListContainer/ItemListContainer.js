@@ -2,28 +2,39 @@ import "./ItemListContainer.css";
 import CardContainer from "../ItemList/ItemList";
 import React, { useState, useEffect } from "react";
 import Loading from "../../Loading/Loading";
+import db from "../../../Firebase";
 
 export default function ItemListContainer() {
   const [spinner, setSpinner] = useState(true);
 
-  const [products, setProducts] = useState([]);
+  const [items, setItems] = useState([]);
+  //FIREBASE
   useEffect(() => {
-    setTimeout(() => {
-      setSpinner(false);
-      fetch("https://e-show-server.herokuapp.com/api/v1/products")
-        .then((response) => response.json())
-        .then((data) => setProducts(data));
-    }, 2000);
-    // ASIGNAR AL STATE ORIGINA VACIO, LA DATA QUE RECIBIMOS DE LA PETICION ASYNC
-  }, [setSpinner]); // LE PASAMOS UN ARRAY VACIO PARA QUE NO LOOPEE DE FORMA INFINITA;
-  // if (products.length === 0) {
-  //   return <Loading />;
-  // }
+    setSpinner(false);
+    const fire = db;
+    const itemCollection = fire.collection("ItemList");
+    itemCollection
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot === 0) {
+          console.log("no hay nada pa");
+        }
+        setItems(querySnapshot.docs.map((doc) => doc.data()));
+      })
+      .catch((error) => {
+        console.log("error buscando items", error);
+      })
+      .finally(() => {
+        setSpinner(true);
+      });
+  }, []);
+
+  console.log(items); //funciona joya
 
   return (
     <div className="divItemList">
-      {spinner ? <Loading /> : null}
-      <CardContainer products={products} />
+      {spinner === false ? <Loading /> : null}
+      <CardContainer products={items} />
     </div>
   );
 }
