@@ -8,6 +8,8 @@ export default function ItemListContainer() {
   const [spinner, setSpinner] = useState(true);
 
   const [items, setItems] = useState([]);
+
+  const [id, setId] = useState([]);
   //FIREBASE
   useEffect(() => {
     setSpinner(false);
@@ -20,6 +22,12 @@ export default function ItemListContainer() {
           console.log("no hay nada pa");
         }
         setItems(querySnapshot.docs.map((doc) => doc.data()));
+        itemCollection.get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            setId(doc.id);
+            console.log(doc.id);
+          });
+        });
       })
       .catch((error) => {
         console.log("error buscando items", error);
@@ -34,7 +42,7 @@ export default function ItemListContainer() {
   return (
     <div className="divItemList">
       {spinner === false ? <Loading /> : null}
-      <CardContainer products={items} />
+      <CardContainer products={items} id={id} />
     </div>
   );
 }

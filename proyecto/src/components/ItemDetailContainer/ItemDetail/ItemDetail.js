@@ -6,9 +6,10 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
+import db from "../../../Firebase";
 
 import { useSelector, useDispatch } from "react-redux";
-import { Add, Delete, clearCart } from "../../../redux/Actions/Index";
+import { Add } from "../../../redux/Actions/Index";
 
 function SimpleModal({ match, stock }) {
   const [item, setItem] = useState([]);
@@ -23,9 +24,27 @@ function SimpleModal({ match, stock }) {
         .then((response) => response.json())
         .then((data) => setItem(data));
     }, 1000);
+  }, [setSpinner]);
 
-    // ASIGNAR AL STATE ORIGINA VACIO, LA DATA QUE RECIBIMOS DE LA PETICION ASYNC
-  }, [setSpinner]); // LE PASAMOS UN ARRAY VACIO PARA QUE NO LOOPEE DE FORMA INFINITA;
+  //FIREBASE
+
+  const [items, setItems] = useState([]);
+  //FIREBASE
+  useEffect(() => {
+    const docRef = db.collection("ItemList").doc(`${match.params.Id}`);
+    const getOptions = {};
+
+    docRef
+      .get(getOptions)
+      .then((doc) => {
+        console.log("Cached document data:", doc.data());
+      })
+      .catch((error) => {
+        console.log("Error getting cached document:", error);
+      });
+
+    setSpinner(true);
+  }, []);
 
   const [contador, setContador] = useState(0);
 
