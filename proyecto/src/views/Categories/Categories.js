@@ -24,11 +24,13 @@ const Categories = ({ match }) => {
       .catch((error) => {
         console.log("Error getting documents: ", error);
       });
+    setSpinner(true);
   }, []);
 
   console.log(items);
   return (
     <div>
+      {spinner === false ? <Loading /> : null}
       <CardContainer products={items} />
       <h1>Hola {categoriesId}</h1>
     </div>
