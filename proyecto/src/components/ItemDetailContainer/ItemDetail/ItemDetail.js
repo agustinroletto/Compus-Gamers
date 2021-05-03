@@ -11,45 +11,37 @@ import db from "../../../Firebase";
 import { useSelector, useDispatch } from "react-redux";
 import { Add } from "../../../redux/Actions/Index";
 
-function SimpleModal({ match, stock }) {
+function SimpleModal({ match }) {
   const [item, setItem] = useState([]);
   const [spinner, setSpinner] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setSpinner(false);
-      fetch(
-        `https://e-show-server.herokuapp.com/api/v1/products/${match.params.Id}`
-      )
-        .then((response) => response.json())
-        .then((data) => setItem(data));
-    }, 1000);
-  }, [setSpinner]);
-
-  //FIREBASE
-
   const [items, setItems] = useState([]);
   //FIREBASE
+
   useEffect(() => {
-    const docRef = db.collection("ItemList").doc(`${match.params.Id}`);
-    const getOptions = {};
+    var docRef = db.collection("ItemList").doc(`${match.params.Id}`);
 
     docRef
-      .get(getOptions)
+      .get()
       .then((doc) => {
-        console.log("Cached document data:", doc.data());
+        if (doc.exists) {
+          setItems(doc.data());
+          console.log("Document data:", doc.data());
+          setSpinner(false);
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
       })
       .catch((error) => {
-        console.log("Error getting cached document:", error);
+        console.log("Error getting document:", error);
       });
-
-    setSpinner(true);
   }, []);
 
   const [contador, setContador] = useState(0);
 
   const handleIncrement = () => {
-    if (contador < stock) {
+    if (contador < items.stock) {
       setContador(contador + 1);
     }
   };
@@ -76,9 +68,9 @@ function SimpleModal({ match, stock }) {
         <Loading />
       ) : (
         <div className="DivItemDetails">
-          <h1>{item.name}</h1>
-          <img src={item.image} alt="Imagen del producto" />
-          <p>${item.price}</p>
+          <h1>{items.name}</h1>
+          <img src={items.image} alt="Imagen del producto" />
+          <p>${items.price}</p>
           <p className="cuotas">Disponible en 3 cuotas sin interés</p>
           <ContadorButton
             increment={handleIncrement}
@@ -96,7 +88,7 @@ function SimpleModal({ match, stock }) {
                     variant="outlined"
                     color="primary"
                     className="agregarAlCarrito"
-                    onClick={() => addItem(item)}
+                    onClick={() => addItem(items)}
                   >
                     Agregar al carrito
                   </Button>

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Item({ products, id }) {
+function Item({ products }) {
   const classes = useStyles();
   return (
     <div className="divItem">
@@ -60,7 +60,7 @@ function Item({ products, id }) {
                   <Button size="small" color="primary">
                     Agregar al carrito
                   </Button>
-                  <NavLink activeClassName="active" to={`/item/${id}`}>
+                  <NavLink activeClassName="active" to={`/item/${products.id}`}>
                     <Button size="small" color="primary">
                       Ver más
                     </Button>

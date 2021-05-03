@@ -1,13 +1,38 @@
 import React from "react";
 import "./Categories.css";
 import { useParams } from "react-router-dom";
+import CardContainer from "../../components/ItemsList/ItemList/ItemList";
+import { useState, useEffect } from "react";
+import Loading from "../../components/Loading/Loading";
+import db from "../../Firebase";
 
-export const Categories = () => {
+const Categories = ({ match }) => {
+  const [spinner, setSpinner] = useState(true);
   const { categoriesId } = useParams();
+  const [items, setItems] = useState([]);
+  console.log(match.params.categoriesId);
 
+  useEffect(() => {
+    db.collection("ItemList")
+      .where("categoryId", "==", `${match.params.categoriesId}`)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          setItems(doc.data());
+        });
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+  }, []);
+
+  console.log(items);
   return (
     <div>
+      <CardContainer products={items} />
       <h1>Hola {categoriesId}</h1>
     </div>
   );
 };
+
+export default Categories;

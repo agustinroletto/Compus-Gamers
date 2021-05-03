@@ -2,10 +2,10 @@ import React from "react";
 import "./ItemList.css";
 import Item from "../Item/Item";
 
-function CardContainer({ products, id }) {
+function CardContainer({ products }) {
   return (
     <div className="itemContainer">
-      <Item products={products} id={id} />
+      <Item products={products} />
     </div>
   );
 }

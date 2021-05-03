@@ -32,7 +32,7 @@ const Cart = () => {
       ) : (
         carrito.map((product) => (
           <div>
-            <p>{product.name}</p>
+            <p>{product.title}</p>
 
             <Button
               variant="outlined"

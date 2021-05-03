@@ -35,7 +35,7 @@ export default function Categories() {
         <NavLink
           className="categorias"
           activeClassName="active"
-          to="/categories/categoria1"
+          to="/categories/placa de videos nvidia"
         >
           <MenuItem onClick={handleClose}>Categoria 1</MenuItem>
         </NavLink>

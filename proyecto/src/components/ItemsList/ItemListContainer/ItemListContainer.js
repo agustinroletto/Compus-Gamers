@@ -9,40 +9,24 @@ export default function ItemListContainer() {
 
   const [items, setItems] = useState([]);
 
-  const [id, setId] = useState([]);
   //FIREBASE
+
   useEffect(() => {
     setSpinner(false);
-    const fire = db;
-    const itemCollection = fire.collection("ItemList");
-    itemCollection
-      .get()
-      .then((querySnapshot) => {
-        if (querySnapshot === 0) {
-          console.log("no hay nada pa");
-        }
-        setItems(querySnapshot.docs.map((doc) => doc.data()));
-        itemCollection.get().then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            setId(doc.id);
-            console.log(doc.id);
-          });
-        });
-      })
-      .catch((error) => {
-        console.log("error buscando items", error);
-      })
-      .finally(() => {
-        setSpinner(true);
-      });
-  }, []);
+    const getData = async () => {
+      const { docs } = await db.collection("ItemList").get();
+      const data = docs.map((item) => ({ id: item.id, ...item.data() }));
+      setItems(data);
+      setSpinner(true);
+    };
 
-  console.log(items); //funciona joya
+    getData();
+  }, []);
 
   return (
     <div className="divItemList">
       {spinner === false ? <Loading /> : null}
-      <CardContainer products={items} id={id} />
+      <CardContainer products={items} />
     </div>
   );
 }
