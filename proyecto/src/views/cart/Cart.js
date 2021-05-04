@@ -62,6 +62,11 @@ const Cart = () => {
               <p>Volver al home</p>
             </Button>
           </NavLink>
+          <NavLink activeClassName="active" exact to="/finishCart">
+            <Button variant="contained" color="secondary">
+              <p>Terminar compra</p>
+            </Button>
+          </NavLink>
         </div>
       ) : null}
     </div>

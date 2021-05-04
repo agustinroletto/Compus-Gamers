@@ -6,8 +6,8 @@ import Contact from "./views/contact/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Categories from "./views/Categories/Categories";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import ItemAdd from "./views/itemAdd/ItemAdd";
 import Cart from "./views/cart/Cart";
+import finishCart from "./views/cart/finishCart/finishCart";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/categories/:categoriesId" component={Categories} />
             <Route path="/item/:Id" component={ItemDetailContainer} />
-            <Route path="/itemAdd" component={ItemAdd} />
             <Route path="/cart" component={Cart} />
+            <Route path="/finishCart" component={finishCart} />
           </Switch>
         </div>
       </Router>
