@@ -6,7 +6,7 @@ Proyecto de Eccomerce con productos relacionados al mundo Gamer. ¿Estás buscan
 
 ## Comenzando ✅
 
-Clonar el proyecto desde (https://github.com/agustinroletto/curso-react)
+Clonar el proyecto desde (https://github.com/agustinroletto/Compus-Gamers)
 
 ## Instalación 
 Una vez clonado el repo desde la consola se debe correr:
