@@ -8,6 +8,11 @@ Proyecto del curso de React de CoderHouse donde se puede utilizar un sitio eccom
 
 Clonar el proyecto desde (https://github.com/agustinroletto/curso-react)
 
+##Instalación 
+Una vez clonado el repo desde la consola se debe correr:
+
+1. npm install
+
 # Heading 1
 ## Heading 2
 ### Heading 3
