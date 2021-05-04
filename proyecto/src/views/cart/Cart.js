@@ -20,8 +20,8 @@ const Cart = () => {
 
   const [total, setTotal] = useState(0);
   useEffect(() => {
-    carrito.forEach((product) => {
-      setTotal(total + Number(product.price));
+    carrito.forEach((x) => {
+      setTotal(total + Number(x.price));
     });
   }, []);
 

@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Categories from "./views/Categories/Categories";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./views/cart/Cart";
-import finishCart from "./views/cart/finishCart/finishCart";
+import FinishCart from "./views/cart/finishCart/FinishCart";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
             <Route path="/categories/:categoriesId" component={Categories} />
             <Route path="/item/:Id" component={ItemDetailContainer} />
             <Route path="/cart" component={Cart} />
-            <Route path="/finishCart" component={finishCart} />
+            <Route path="/finishCart" component={FinishCart} />
           </Switch>
         </div>
       </Router>

@@ -26,7 +26,6 @@ function SimpleModal({ match }) {
       .then((doc) => {
         if (doc.exists) {
           setItems(doc.data());
-          console.log("Document data:", doc.data());
           setSpinner(false);
         } else {
           // doc.data() will be undefined in this case
