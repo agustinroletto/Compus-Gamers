@@ -8,11 +8,35 @@ Proyecto del curso de React de CoderHouse donde se puede utilizar un sitio eccom
 
 Clonar el proyecto desde (https://github.com/agustinroletto/curso-react)
 
-##Instalación 
+## Instalación 
 Una vez clonado el repo desde la consola se debe correr:
 
 ### `npm install`
-1. npm install
+
+
+
+## iniciar el proyecto 
+Ejecutar el siguiente comando en consola:
+
+### `npm start`
+
+
+## Construido con 🏢
+
+Tecnologia Principal
+
+    [ReactJS] 
+(hhtps://reactjs.org/)
+    
+    FrameWork Front-End
+
+Frameworks adicionales
+
+    MDBootstrap - El framework CSS utilizado
+    React-Hook-Form - Para Validaciones de Formulario
+    SweetAlert2 - para alertas y/o popups
+    react-animated-css - para Animaciones
+
 
 # Heading 1
 ## Heading 2
