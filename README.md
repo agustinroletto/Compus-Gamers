@@ -4,7 +4,7 @@
 
 Proyecto del curso de React de CoderHouse donde se puede utilizar un sitio eccomerce con back realizado en Firebase.
 
-### Comenzando ✅
+## Comenzando ✅
 
 Clonar el proyecto desde (https://github.com/agustinroletto/curso-react)
 
