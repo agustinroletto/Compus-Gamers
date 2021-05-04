@@ -25,8 +25,7 @@ Ejecutar el siguiente comando en consola:
 
 Tecnologia Principal
 
-    [ReactJS] 
-(hhtps://reactjs.org/)
+    [ReactJS](hhtps://reactjs.org/)
     
     FrameWork Front-End
 
