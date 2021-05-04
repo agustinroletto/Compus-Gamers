@@ -11,6 +11,7 @@ Clonar el proyecto desde (https://github.com/agustinroletto/curso-react)
 ##Instalación 
 Una vez clonado el repo desde la consola se debe correr:
 
+### `npm install`
 1. npm install
 
 # Heading 1
