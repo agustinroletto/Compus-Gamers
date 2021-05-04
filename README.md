@@ -1,6 +1,6 @@
 
 
-# **Proyecto React-App** 
+# **Proyecto Compus Gamers** 
 
 Proyecto de Eccomerce con productos relacionados al mundo Gamer. ¿Estás buscando tu próxima compu para correr todos los juegos?
 
