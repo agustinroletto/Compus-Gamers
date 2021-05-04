@@ -2,7 +2,7 @@
 
 # **Proyecto React-App** 
 
-Proyecto del curso de React de CoderHouse donde se puede utilizar un sitio eccomerce con back realizado en Firebase.
+Proyecto de Eccomerce con productos relacionados al mundo Gamer. ¿Estás buscando tu próxima compu para correr todos los juegos?
 
 ## Comenzando ✅
 
