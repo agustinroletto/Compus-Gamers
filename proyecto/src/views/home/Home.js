@@ -1,13 +1,17 @@
 import React from "react";
 import ItemListContainer from "../../components/ItemsList/ItemListContainer/ItemListContainer";
-import Galeria from "../../components/Carousel/Carousel";
+import Footer from "../../components/footer/Footer";
+import "rc-footer/assets/index.css"; // import 'rc-footer/asssets/index.less';
 
 function Home() {
   return (
     <div>
-      <Galeria />
-
-      <ItemListContainer />
+      <div>
+        <ItemListContainer />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

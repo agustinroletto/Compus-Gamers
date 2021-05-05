@@ -32,7 +32,9 @@ class NavBar extends Component {
           </NavLink>
           <Categories />
         </ul>
-
+        <NavLink activeClassName="active" exact to="/formproduct">
+          <li className="liNavBar">Form Product</li>
+        </NavLink>
         <NavLink activeClassName="active" exact to="/cart">
           <CartWidget />
         </NavLink>

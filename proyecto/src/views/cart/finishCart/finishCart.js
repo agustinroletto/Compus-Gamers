@@ -4,9 +4,17 @@ import db from "../../../Firebase";
 import { useSelector, useDispatch } from "react-redux";
 import firebase from "firebase/app";
 import "firebase/firestore";
+import OrderId from "./orderId/OrderId";
+import { useForm } from "react-hook-form";
+import { clearCart } from "../../../redux/Actions/Index";
 
 const FinishCart = () => {
   const carrito = useSelector((state) => state.Carrito);
+  const dispatch = useDispatch();
+
+  const cartVacio = () => {
+    dispatch(clearCart());
+  };
   const [order, setOrder] = useState({
     name: "",
     email: "",
@@ -34,6 +42,11 @@ const FinishCart = () => {
     e.target.reset();
   };
 
+  const showOrderId = (e) => {
+    e.preventDefault();
+    return <OrderId />;
+  };
+
   return (
     <form onSubmit={handleSumbit}>
       <h1>Finalizar compra</h1>
@@ -51,7 +64,12 @@ const FinishCart = () => {
         onChange={handleChange}
       />
 
-      <button className="buttonForm" type="submit" name="sumbit">
+      <button
+        className="buttonForm"
+        type="submit"
+        name="sumbit"
+        onClick={cartVacio}
+      >
         Finalizar compra
       </button>
     </form>

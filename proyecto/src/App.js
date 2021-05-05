@@ -8,6 +8,7 @@ import Categories from "./views/Categories/Categories";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./views/cart/Cart";
 import FinishCart from "./views/cart/finishCart/FinishCart";
+import FormProduct from "../src/components/FormProduct/FormProduct";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/item/:Id" component={ItemDetailContainer} />
             <Route path="/cart" component={Cart} />
             <Route path="/finishCart" component={FinishCart} />
+            <Route path="/formproduct" component={FormProduct} />
           </Switch>
         </div>
       </Router>
