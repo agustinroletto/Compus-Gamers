@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import OrderId from "./orderId/OrderId";
-import { useForm } from "react-hook-form";
 import { clearCart } from "../../../redux/Actions/Index";
 
 const FinishCart = () => {

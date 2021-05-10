@@ -12,7 +12,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Add } from "../../../redux/Actions/Index";
 
 function SimpleModal({ match }) {
-  const [item, setItem] = useState([]);
   const [spinner, setSpinner] = useState(true);
 
   const [items, setItems] = useState([]);
@@ -25,7 +24,7 @@ function SimpleModal({ match }) {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          setItems(doc.data());
+          setItems({ id: doc.id, ...doc.data() });
           setSpinner(false);
         } else {
           // doc.data() will be undefined in this case

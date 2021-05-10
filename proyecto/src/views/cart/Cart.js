@@ -10,18 +10,19 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const removeItem = (id) => {
-    console.log(id);
-    if (carrito.includes(id)) dispatch(Delete(id)); //aca tengo el mismo error que en la otra, como accedo al id del item.
+    dispatch(Delete(id)); //aca tengo el mismo error que en la otra, como accedo al id del item.
   };
+
   const cartVacio = () => {
     dispatch(clearCart());
     setTotal(0);
   };
 
   const [total, setTotal] = useState(0);
+
   useEffect(() => {
     carrito.forEach((x) => {
-      setTotal(total + Number(x.price));
+      return setTotal(total + Number(x.price));
     });
   }, []);
 
@@ -63,7 +64,7 @@ const Cart = () => {
             </Button>
           </NavLink>
           <NavLink activeClassName="active" exact to="/finishCart">
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="primary">
               <p>Terminar compra</p>
             </Button>
           </NavLink>

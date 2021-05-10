@@ -9,13 +9,15 @@ export default function ItemListContainer() {
 
   const [items, setItems] = useState([]);
 
-  //FIREBASE
-
   useEffect(() => {
     setSpinner(false);
     const getData = async () => {
       const { docs } = await db.collection("ItemList").get();
-      const data = docs.map((item) => ({ id: item.id, ...item.data() }));
+      const data = docs.map((item) => ({
+        quantity: {},
+        id: item.id,
+        ...item.data(),
+      }));
       setItems(data);
       setSpinner(true);
     };
