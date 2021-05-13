@@ -10,19 +10,21 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const removeItem = (id) => {
-    dispatch(Delete(id)); //aca tengo el mismo error que en la otra, como accedo al id del item.
+    dispatch(Delete(id));
   };
+
+  console.log(carrito);
 
   const cartVacio = () => {
     dispatch(clearCart());
     setTotal(0);
   };
 
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState("");
 
   useEffect(() => {
     carrito.forEach((x) => {
-      return setTotal(total + Number(x.price));
+      setTotal(total + x.price);
     });
   }, []);
 

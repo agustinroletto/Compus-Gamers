@@ -24,7 +24,7 @@ function SimpleModal({ match }) {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          setItems({ id: doc.id, ...doc.data() });
+          setItems({ quantity: 0, id: doc.id, ...doc.data() });
           setSpinner(false);
         } else {
           // doc.data() will be undefined in this case
@@ -55,11 +55,23 @@ function SimpleModal({ match }) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
-    if (carrito.includes(item.Id)) {
-      console.log(carrito[item]); //aca va que agregue un stock al array pero no pude encontrar como hacerlo.
-      carrito.price = carrito.price + item.price;
-    } else dispatch(Add(item));
+    console.log(item.id);
+
+    if (
+      carrito.forEach((element) => {
+        console.log(element.id);
+        if (element.id === item.id) {
+          carrito.quantity = carrito.quantity + 1;
+        }
+      })
+    );
+    else dispatch(Add(item));
+
+    // if (carrito.includes(item)) {
+    //   return (carrito.quantity = carrito.quantity + 1);
+    // } else dispatch(Add(item));
   };
+
   return (
     <div className="divItem">
       {spinner ? (
@@ -67,7 +79,7 @@ function SimpleModal({ match }) {
       ) : (
         <div className="DivItemDetails">
           <h1>{items.name}</h1>
-          <img src={items.image} alt="Imagen del producto" />
+          <img src={items.imageId} alt="Imagen del producto" />
           <p>${items.price}</p>
           <p className="cuotas">Disponible en 3 cuotas sin interés</p>
           <ContadorButton

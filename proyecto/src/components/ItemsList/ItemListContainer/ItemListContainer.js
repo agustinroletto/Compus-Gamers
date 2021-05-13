@@ -14,7 +14,7 @@ export default function ItemListContainer() {
     const getData = async () => {
       const { docs } = await db.collection("ItemList").get();
       const data = docs.map((item) => ({
-        quantity: {},
+        quantity: 0,
         id: item.id,
         ...item.data(),
       }));
@@ -24,7 +24,6 @@ export default function ItemListContainer() {
 
     getData();
   }, []);
-
   return (
     <div className="divItemList">
       {spinner === false ? <Loading /> : null}
