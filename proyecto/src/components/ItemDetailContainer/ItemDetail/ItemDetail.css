@@ -17,3 +17,8 @@
 .agregarAlCarrito {
   display: none;
 }
+
+.divImg {
+  width: 500px;
+  height: 500px;
+}

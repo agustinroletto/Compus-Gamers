@@ -79,7 +79,11 @@ function SimpleModal({ match }) {
       ) : (
         <div className="DivItemDetails">
           <h1>{items.name}</h1>
-          <img src={items.imageId} alt="Imagen del producto" />
+          <img
+            className="divImg"
+            src={items.imageId}
+            alt="Imagen del producto"
+          />
           <p>${items.price}</p>
           <p className="cuotas">Disponible en 3 cuotas sin interés</p>
           <ContadorButton

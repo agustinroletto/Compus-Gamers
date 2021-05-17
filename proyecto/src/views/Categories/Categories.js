@@ -27,7 +27,6 @@ const Categories = ({ match }) => {
     setSpinner(true);
   }, []);
 
-  console.log(items);
   return (
     <div>
       {spinner === false ? <Loading /> : null}
