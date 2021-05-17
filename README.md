@@ -26,6 +26,13 @@ Ejecutar el siguiente comando en consola:
 Tecnologia Principal
 
    [ReactJS](https://reactjs.org/)
+   
+## Dependencias 
+- [Matherial UI](https://material-ui.com/) V 4.11.4	
+- [AXIOS](https://github.com/axios/axios) V 0.21.1
+- [FIrebase](https://firebase.google.com/?hl=es) V 8.6.1
+- [Redux](https://redux.js.org/) V 4.1.0
+
     
 <a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" style="max-width:100%;"></a>
