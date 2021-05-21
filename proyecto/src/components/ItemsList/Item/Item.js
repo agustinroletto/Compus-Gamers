@@ -32,35 +32,36 @@ const useStyles = makeStyles((theme) => ({
 
 function Item({ products }) {
   const classes = useStyles();
+
   return (
     <div className="divItem">
-      {Array.from(products).map((products) => (
+      {Array.from(products).map((product) => (
         <div className={classes.div}>
           <Grid className="divComponente" container spacing={3}>
             <Grid item xs>
               <Card className={classes.root}>
                 <CardActionArea>
-                  <NavLink activeClassName="active" to={`/item/${products.id}`}>
+                  <NavLink activeClassName="active" to={`/item/${product.id}`}>
                     <CardMedia
                       className={classes.media}
-                      image={products.imageId}
+                      image={product.imageId}
                       title="Contemplative Reptile"
                     />
                   </NavLink>
                   <CardContent>
                     <Typography gutterBottom variant="headline" component="h2">
-                      {products.title}
+                      {product.title}
                     </Typography>
-                    <Typography component="p">{products.categoryId}</Typography>
-                    <p> $ARS {products.price}</p>
-                    <p> Stock: {products.stock} unidades</p>
+                    <Typography component="p">{product.categoryId}</Typography>
+                    <p> $ARS {product.price}</p>
+                    <p> Stock: {product.stock} unidades</p>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
                   <Button size="small" color="primary">
                     Agregar al carrito
                   </Button>
-                  <NavLink activeClassName="active" to={`/item/${products.id}`}>
+                  <NavLink activeClassName="active" to={`/item/${product.id}`}>
                     <Button size="small" color="primary">
                       Ver más
                     </Button>

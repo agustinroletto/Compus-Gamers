@@ -35,14 +35,14 @@ export default function Categories() {
         <NavLink
           className="categorias"
           activeClassName="active"
-          to="/categories/placa de videos nvidia"
+          to="/categories/Nvidia"
         >
           <MenuItem onClick={handleClose}>Categoria 1</MenuItem>
         </NavLink>
         <NavLink
           className="categorias"
           activeClassName="active"
-          to="/categories/categoria2"
+          to="/categories/AMD"
         >
           <MenuItem onClick={handleClose}>Categoria 2</MenuItem>
         </NavLink>{" "}

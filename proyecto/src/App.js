@@ -21,6 +21,8 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/categories/:categoriesId" component={Categories} />
+            <Route path="/categories/:categoriesId" component={Categories} />
+            <Route path="/categories/:categoriesId" component={Categories} />
             <Route path="/item/:Id" component={ItemDetailContainer} />
             <Route path="/cart" component={Cart} />
             <Route path="/finishCart" component={FinishCart} />

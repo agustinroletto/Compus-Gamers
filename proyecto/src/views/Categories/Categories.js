@@ -10,28 +10,24 @@ const Categories = ({ match }) => {
   const [spinner, setSpinner] = useState(true);
   const { categoriesId } = useParams();
   const [items, setItems] = useState([]);
-  console.log(match.params.categoriesId);
+
+  const url = match.params.categoriesId;
 
   useEffect(() => {
-    db.collection("ItemList")
-      .where("categoryId", "==", `${match.params.categoriesId}`)
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          setItems(doc.data());
-        });
-      })
-      .catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
-    setSpinner(true);
+    const call = async () => {
+      const { docs } = await db.collection("ItemList").get();
+      const data = docs.map((item) => ({ id: item.id, ...item.data() }));
+      setItems(data);
+    };
+    call();
   }, []);
-  console.log(items);
+  const itemFilter = items.filter((i) => i.categoryId === url);
+  console.log(itemFilter);
+  console.log(url);
   return (
     <div>
       {spinner === false ? <Loading /> : null}
-      <CardContainer products={items} />
-      <h1>Hola {categoriesId}</h1>
+      <CardContainer products={itemFilter} />
     </div>
   );
 };
