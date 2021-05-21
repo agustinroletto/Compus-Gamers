@@ -22,8 +22,7 @@ const Categories = ({ match }) => {
     call();
   }, []);
   const itemFilter = items.filter((i) => i.categoryId === url);
-  console.log(itemFilter);
-  console.log(url);
+
   return (
     <div>
       {spinner === false ? <Loading /> : null}

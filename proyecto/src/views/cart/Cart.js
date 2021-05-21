@@ -13,8 +13,6 @@ const Cart = () => {
     dispatch(Delete(id));
   };
 
-  console.log(carrito);
-
   const cartVacio = () => {
     dispatch(clearCart());
     setTotal(0);

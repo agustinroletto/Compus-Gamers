@@ -55,11 +55,8 @@ function SimpleModal({ match }) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
-    console.log(item.id);
-
     if (
       carrito.forEach((element) => {
-        console.log(element.id);
         if (element.id === item.id) {
           carrito.quantity = carrito.quantity + 1;
         }

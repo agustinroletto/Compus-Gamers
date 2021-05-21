@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function StockVacio() {
   const classes = useStyles();
-  console.log("hola");
 
   return (
     <div className={classes.root}>
