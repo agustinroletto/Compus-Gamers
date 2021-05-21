@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Categories from "./views/Categories/Categories";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./views/cart/Cart";
-import FinishCart from "./views/cart/finishCart/FinishCart";
+import FinishCart from "./views/cart/finishCart/finishCart";
 import FormProduct from "../src/components/FormProduct/FormProduct";
 
 function App() {
