@@ -4,7 +4,6 @@ import db from "../../../Firebase";
 import { useSelector, useDispatch } from "react-redux";
 import firebase from "firebase/app";
 import "firebase/firestore";
-import OrderId from "./orderId/OrderId";
 import { clearCart } from "../../../redux/Actions/Index";
 
 const FinishCart = () => {
@@ -39,11 +38,6 @@ const FinishCart = () => {
       console.log(" NO se subio el producto");
     }
     e.target.reset();
-  };
-
-  const showOrderId = (e) => {
-    e.preventDefault();
-    return <OrderId />;
   };
 
   return (
